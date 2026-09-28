@@ -1,0 +1,13 @@
+<!doctype html>
+<meta charset="utf-8">
+<script>
+  // 用法：warmup.html?dir=ch_1/
+  const dir = new URLSearchParams(location.search).get("dir") || "";
+  if (/^[\w.\-\/]+\/$/.test(dir) && !dir.includes("..")) {
+    ["renpy.js", "renpy-pre.js", "renpy.wasm", "renpy.data", "game.zip"].forEach((f) => {
+      fetch(new URL(dir + f, location.href))
+        .then((r) => r.arrayBuffer())   // 要把內容讀完，快取才會完整寫入
+        .catch(() => {});
+    });
+  }
+</script>
