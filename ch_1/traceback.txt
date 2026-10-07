@@ -1,0 +1,33 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While loading the script.
+renpy.script.ScriptError: Name ('renpy/common/000atl.rpy', 1762482023, 244) is defined twice, at renpy/common/000atl.rpy:25 and game/renpy/common/000atl.rpyc:25.
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "renpy/bootstrap.py", line 401, in bootstrap
+    renpy.main.main()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/main.py", line 412, in main
+    renpy.game.script.load_script()  # sets renpy.game.script.
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^                           
+  File "renpy/script.py", line 456, in load_script
+    self.load_appropriate_file(".rpyc", ["_ren.py", ".rpy"], dir, fn, initcode)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/script.py", line 1082, in load_appropriate_file
+    self.finish_load(stmts, initcode, filename=lastfn)  # type: ignore
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                
+  File "renpy/script.py", line 713, in finish_load
+    check_name(node)
+    ~~~~~~~~~~^^^^^^
+  File "renpy/script.py", line 674, in check_name
+    raise ScriptError(
+    ...<8 lines>...
+    )
+renpy.script.ScriptError: Name ('renpy/common/000atl.rpy', 1762482023, 244) is defined twice, at renpy/common/000atl.rpy:25 and game/renpy/common/000atl.rpyc:25.
+
+Windows-11-10.0.26200-SP0 AMD64
+Ren'Py 8.5.2.26010301
+ch3 4 1.0
+Tue Sep 29 20:47:22 2026
