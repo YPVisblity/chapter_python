@@ -1,4 +1,4 @@
-var cacheName = 'ch3-4';
+var cacheName = 'ch_1-1';
 
 /* Start the service worker and cache all of the app's content or use the existing one */
 self.addEventListener('install', function (e) {
@@ -40,15 +40,6 @@ async function fetchAndCache(request) {
             return rv;
         }
 
-        if (cachedResponse) {
-            if (cachedResponse.headers.get('Last-Modified')) {
-                request.headers.set('If-Modified-Since', cachedResponse.headers.get('Last-Modified'));
-            }
-            if (cachedResponse.headers.get('ETag')) {
-                request.headers.set('If-None-Match', cachedResponse.headers.get('ETag'));
-            }
-        }
-
         const response = await fetch(request);
 
         if (cachedResponse && response.status == 304) {
@@ -77,6 +68,8 @@ async function fetchAndCache(request) {
 
 /* Serve cached content when offline */
 self.addEventListener('fetch', function (e) {
+    const p = new URL(e.request.url).pathname;
+    if (!addToCache && /\/(game\.zip|renpy\.data|renpy\.wasm)$/.test(p)) return;  // 交給瀏覽器直接下載
     e.respondWith(fetchAndCache(e.request));
 });
 
