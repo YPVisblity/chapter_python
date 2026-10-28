@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 238: choice menuitem expects a non-empty block.
+    "選項 A：\nimport math\nprint(math.sqrt(16))":
+                                         ^
+
+Ren'Py Version: Ren'Py 8.5.2.26010301
+Tue Oct 20 11:31:59 2026

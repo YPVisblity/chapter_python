@@ -1,0 +1,39 @@
+# 第 2 章第二關：例外處理與檔案處理教學劇情
+# 主流程：先教 try/except（safe_divide），再教檔案處理（write_log）
+
+# 角色定義（全專案只定義一次）
+define p = Character("你", color="#00FFCC")
+define aria = Character("ARIA", color="#FF9FE5", image="aria")
+define sys = Character("NEXUS-9", color="#FF4444")
+define boss = Character("老闆", color="#FFD700")
+
+# 初始值設定
+default aria_trust = 0
+default score = 0
+
+label start:
+
+    call teach_divide from _call_teach_divide
+
+    call transition_to_file from _call_transition_to_file
+
+    call teach_file from _call_teach_file
+
+    aria "兩個系統都穩住了。"
+    aria "接下來就交給你了：先修復 safe_divide(a, b)，再處理檔案的例外。"
+    aria "我會在旁邊看著你的 >u<"
+
+    return
+
+label transition_to_file:
+
+    hide prelude2closeeyes
+    scene black with fade
+    show aria talk
+
+    sys "【警告】日誌系統無法寫入，修復紀錄正在遺失。"
+
+    aria "除法模組暫時穩住了，可是……"
+    aria "日誌系統也出問題了。"
+
+    return

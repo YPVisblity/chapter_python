@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 23: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    "終於來到了最深處的總機房大門前。然而大門被厚重的電子鎖鎖死，畫面上顯示出駭客最後的嘲諷字條。"
+    ^
+
+Ren'Py Version: Ren'Py 8.5.2.26010301
+Tue Oct 27 23:52:45 2026

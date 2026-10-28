@@ -1,0 +1,23 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 47, in script
+    jump chapter4_2
+renpy.script.LabelNotFound: could not find label 'chapter4_2'. Did you mean: 'chapter4_1'?
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 47, in script
+    jump chapter4_2
+  File "renpy/ast.py", line 1928, in execute
+    rv = renpy.game.script.lookup(target)
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "renpy/script.py", line 1201, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'chapter4_2'. Did you mean: 'chapter4_1'?
+
+Windows-11-10.0.26300-SP0 AMD64
+Ren'Py 8.5.2.26010301
+4-1 1.0
+Tue Oct 27 23:31:52 2026

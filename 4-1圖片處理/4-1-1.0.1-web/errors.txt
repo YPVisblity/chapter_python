@@ -1,0 +1,9 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 50: Indentation mismatch.
+    jump ch4_1_input
+
+Ren'Py Version: Ren'Py 8.5.2.26010301
+Tue Oct 27 23:33:06 2026
