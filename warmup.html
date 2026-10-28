@@ -1,0 +1,49 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script>
+(async () => {
+  // 用法：warmup.html?dir=ch_1/
+  const params = new URLSearchParams(location.search);
+  const dir = params.get("dir") || "";
+
+  // 檢查目錄參數，避免路徑穿越
+  if (!/^[\w.-]+(\/[\w.-]+)*\/$/.test(dir) || dir.includes("..")) {
+    console.error("無效的目錄路徑");
+    return;
+  }
+
+  const files = [
+    "renpy.js",
+    "renpy-pre.js",
+    "renpy.wasm",
+    "renpy.data",
+    "game.zip"
+  ];
+
+  for (const file of files) {
+    const url = new URL(dir + file, location.href);
+
+    try {
+      console.log("開始載入：", file);
+
+      const response = await fetch(url);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      // 必須等整個檔案讀取完成，才進入下一個檔案
+      await response.arrayBuffer();
+
+      console.log("載入完成：", file);
+    } catch (error) {
+      console.error("載入失敗：", file, error);
+
+      // 失敗後繼續載入下一個檔案
+    }
+  }
+
+  console.log("所有檔案處理完成");
+})();
+</script>
