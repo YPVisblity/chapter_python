@@ -8,7 +8,7 @@ define boss = Character("老闆", color="#FFD700")
 # 初始值設定
 default aria_trust = 0
 default score = 0
-
+window auto hide
 label start:
 
     scene black with fade
@@ -29,8 +29,8 @@ label start:
 
     show file_exception_code:
         xalign 0.45
-        yalign 0.65
-        zoom 1.5
+        yalign 0.8
+        zoom 2.0
 
 
     aria "def write_log(filename, data):"
@@ -56,11 +56,11 @@ label start:
     aria "檔案名稱也可能不合法。"
 
     aria "只要其中一個狀況發生，程式就可能直接崩潰。"
+    "如果 open 或 write 可能失敗，最適合怎麼處理？"
 
-    window hide
-
+    window hide dissolve  
     menu:
-        "如果 open 或 write 可能失敗，最適合怎麼處理？"
+        #"如果 open 或 write 可能失敗，最適合怎麼處理？"
 
         "用 try-except 包住可能出錯的地方":
             hide question10 with dissolve

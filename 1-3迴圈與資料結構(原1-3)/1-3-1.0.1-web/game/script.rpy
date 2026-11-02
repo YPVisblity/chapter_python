@@ -17,7 +17,8 @@ label start:
     hide aria talk
     show for:
         xalign 0.5
-        yalign 0.5
+        yalign 0.65
+        zoom 3.5
     aria "第一行的意思是設一個i的變數為0後，執行下面縮排的程式，執行程式後把i+1，執行range裡的次數。"
     aria "簡單的來說"
     aria "這段程式碼的意思是：重複執行 5 次。"
@@ -70,7 +71,7 @@ label start:
     return
     
 label teach_def:
-
+    window auto hide
     scene black with fade
 
     aria "如果我們要寫一個自用的程式的話"
@@ -78,8 +79,8 @@ label teach_def:
 
     show def_example:
         xalign 0.5
-        yalign 0.35
-        zoom 0.9
+        yalign 0.65
+        zoom 2.5
 
     aria "def 是用來定義函數的關鍵字。"
 
@@ -108,8 +109,10 @@ label teach_def:
 
     aria "當程式執行到 say_hello()，就會進入函數，執行裡面的 print。"
     aria "現在來問你一個問題，測測你的能耐"
+    
     menu:
         "哪一行才會讓函數真的執行？"
+
 
         "def say_hello():":
             aria "這一行只是定義函數，還沒有真正執行裡面的內容。"

@@ -52,11 +52,14 @@ label open_door:
     show if_else:
         xalign 0.5
         yalign 0.5
+        zoom 3.5
     aria "第一行的if levels > 10 是指levels這個變數必須大於10才會執行下面的內容。"
     aria "再來是第二行後的縮排內容，是if的條件達成後會執行的內容，這扇門在等級達到十的時候會打開"
     aria "第三行的else:是指如果前面的條件不達成則會執行以下縮排的內容"
     aria talk "第四行後的縮排內容是指如果等級不大於十等的話則會顯示等級不足"
     aria "有個有趣的地方你想不想知道 :333"
+    hide if_else
+
     menu:
         "要不要理aria >u< ?"
 
@@ -64,7 +67,7 @@ label open_door:
             aria "if 條件跟執行的內容裡面都可以在塞好幾個if捏><"
         "我要跳過跳過跳過skippp":
             aria "不要無視我好咩!!!"
-    hide if_else
+    #hide if_else
     menu:
         "要再看一次 if else 教學嗎？"
 
@@ -75,9 +78,11 @@ label open_door:
             return
 
 label open_light:
+    window auto hide
     show if_else_if_else:
         xalign 0.5
-        yalign 0.5
+        yalign 0.85
+        zoom 2.0
     aria "看來這邊的燈現在要打開的話，只能輸入數字來打開了呢 >o<?"
     aria "從程式碼來看，這邊多出了else if，剛好可以趁這個時候來進行教學"
     aria "else if 條件，當上面if的條件為達成且這一行的條件達成後，就會執行該區域的程式碼"
@@ -85,8 +90,12 @@ label open_light:
     $ choosing_light = True
 
     while choosing_light:
+        "該輸入多少數字來打開燈呢"
+        window hide dissolve
+         
+
         menu:
-            "該輸入多少數字來打開燈呢"
+            #"該輸入多少數字來打開燈呢"
 
             "0":
                 aria "user剛剛有做什麼嗎oAo?"
@@ -105,5 +114,4 @@ label open_light:
                 aria "哇哇哇*A*，現在的燈太亮了"
                 aria "user趕快把燈調暗點，試著把數值往下調點呦~"
                 hide if_else_if_else
-
 

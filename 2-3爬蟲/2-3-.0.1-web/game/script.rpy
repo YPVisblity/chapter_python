@@ -10,6 +10,7 @@ default aria_trust = 0
 default score = 0
 
 label start:
+    window auto hide
 
     scene black with fade
     show aria talk
@@ -30,8 +31,8 @@ label start:
 
     show crawler_code:
         xalign 0.5
-        yalign 0.35
-        zoom 2.0
+        yalign 0.5
+        zoom 1.65   
 
     aria "先看第一行。"
     aria "import requests"
@@ -52,22 +53,30 @@ label start:
     aria "如果是 403，代表 Forbidden，也就是被拒絕。"
     aria "如果是 404，代表 Not Found，也就是找不到頁面。"
     aria "如果是 429，代表 Too Many Requests，也就是請求太頻繁。"
-
+    show crawler_code:
+        xalign 0.5
+        yalign 0.9
+        zoom 1.65  
+    "如果 response.status_code 是 200，通常代表什麼？"
+    window hide dissolve 
     menu:
-        "如果 response.status_code 是 200，通常代表什麼？"
+  
 
         "請求成功":
             aria "答對了！"
             aria "200 通常代表網站成功回應，資料有機會被正常取得。"
+            hide crawler_code
             $ score += 1
-
+            
         "網站拒絕請求":
             aria "這比較像 403 Forbidden。"
             aria "200 是比較好的狀態。"
+            hide crawler_code
 
         "頁面不存在":
             aria "這比較像 404 Not Found。"
             aria "200 代表請求成功。"
+            hide crawler_code
 
     aria "可是這個情報爬蟲一直收到 403。"
     aria "也就是說，網站不是壞掉，而是不想把資料交給我們。"
@@ -83,23 +92,29 @@ label start:
 
     aria "其中最常見的是 User-Agent。"
     aria "User-Agent 可以告訴網站，這個請求是由什麼瀏覽器或工具送出的。"
-
+    "爬蟲收到 403 Forbidden，最可能需要補上什麼？"
+    show crawler_code:
+        xalign 0.5
+        yalign 0.9
+        zoom 1.65  
+    window hide dissolve
     menu:
-        "爬蟲收到 403 Forbidden，最可能需要補上什麼？"
 
         "User-Agent headers":
             aria "答對了！"
+            hide crawler_code
             aria "加上 User-Agent 後，請求會比較像一般瀏覽器送出的請求。"
             $ score += 1
 
         "把 print(response.text) 刪掉":
             aria "不是喔。"
+            hide crawler_code
             aria "print 只是顯示內容，不會影響網站要不要回應我們。"
-
+            
         "把網址全部改成大寫":
             aria "不是喔。"
+            hide crawler_code
             aria "網址不是這題的重點，重點是請求的 headers。"
-
     aria "不過要注意。"
     aria "加 User-Agent 不是萬能鑰匙。"
 
