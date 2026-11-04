@@ -1,0 +1,32 @@
+images/aria default.png
+image 801,1186
+images/aria leave.png
+image 807,1247
+images/aria talk.png
+image 801,1187
+images/boss awkward.png
+image 430,1020
+images/boss talk.png
+image 430,1020
+images/def_example.png
+image 402,235
+images/door.jpg
+image 554,554
+images/for.png
+image 397,230
+images/futuristic_door.png
+image 1672,941
+images/if_else.png
+image 429,297
+images/if_else_if_else.png
+image 468,368
+images/prelude1.png
+image 953,595
+images/prelude2closeeyes.png
+image 1038,678
+images/prelude2openeyes.png
+image 1048,678
+images/red server room.png
+image 1980,1080
+images/virtual space.png
+image 1980,1080
