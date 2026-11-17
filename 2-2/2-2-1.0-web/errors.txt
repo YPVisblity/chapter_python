@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 59: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    "如果 open 或 write 可能失敗，最適合怎麼處理？"
+    ^
+
+Ren'Py Version: Ren'Py 8.5.2.26010301
+Tue Nov  3 00:36:08 2026
