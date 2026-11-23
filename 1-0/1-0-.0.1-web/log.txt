@@ -1,4 +1,4 @@
-2026-11-17 16:23:48 UTC
+2026-11-23 15:27:54 UTC
 Windows-11-10.0.26300-SP0
 Ren'Py 8.5.2.26010301
 
@@ -6,20 +6,20 @@ Ren'Py 8.5.2.26010301
 .0.1
 Built at 2026-09-21 16:46:26 UTC
 
-Early init took 44 ms
+Early init took 42 ms
 Loading error handling took 23 ms
-Loading script took 94 ms
-Loading save slot metadata took 29 ms
+Loading script took 86 ms
+Loading save slot metadata took 28 ms
 Loading persistent took 0 ms
 Set script version to: (8, 5, 2)
-Running init code took 33 ms
-Loading analysis data took 4 ms
+Running init code took 34 ms
+Loading analysis data took 2 ms
 Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 15 ms
-Dump and make backups took 40 ms
+Reloading save slot metadata took 12 ms
+Dump and make backups took 34 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 37 ms
+Initial gc took 30 ms
 DPI scale factor: 1.250000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)

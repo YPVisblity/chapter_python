@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 242: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    window show
+    ^
+
+Ren'Py Version: Ren'Py 8.5.2.26010301
+Mon Nov 23 19:43:17 2026
