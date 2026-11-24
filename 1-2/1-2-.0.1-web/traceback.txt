@@ -1,0 +1,40 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 33, in script call
+    call open_light
+  File "game/script.rpy", line 80, in script
+    show aria talk at char_right            # 角色立繪放右邊
+  File "game/script.rpy", line 80, in <module>
+    show aria talk at char_right            # 角色立繪放右邊
+                                  ^^^^^^^^^^                
+NameError: name 'char_right' is not defined
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 33, in script call
+    call open_light
+  File "game/script.rpy", line 80, in script
+    show aria talk at char_right            # 角色立繪放右邊
+  File "renpy/ast.py", line 1357, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 726, in show_imspec
+    at_list = [renpy.python.py_eval(i) for i in at_list]
+               ~~~~~~~~~~~~~~~~~~~~^^^                  
+  File "renpy/python.py", line 1305, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 80, in <module>
+    show aria talk at char_right            # 角色立繪放右邊
+                                  ^^^^^^^^^^                
+NameError: name 'char_right' is not defined
+
+Windows-11-10.0.26300-SP0 AMD64
+Ren'Py 8.5.2.26010301
+1-2 1.0
+Mon Nov  2 23:54:02 2026
